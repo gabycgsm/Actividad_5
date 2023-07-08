@@ -1,0 +1,20 @@
+<section id="formulario">
+    <h1>Formulario</h1>
+    <hr>
+    <div>
+        <label for="titulo">Titulo</label>
+        <input type="text" id="titulo" placeholder="Ingrese el titulo de la noticia">
+    </div>
+    <div>
+        <label for="url">Url Noticia</label>
+        <input type="image" id="url" placeholder="Ingrese la url de la noticia">
+    </div>
+    <button>Guardar</button>
+
+</section>
+<section id="listaNoticias">
+    <ul [innerHTML]="cargarNoticias()">
+
+    </ul>
+
+</section>
