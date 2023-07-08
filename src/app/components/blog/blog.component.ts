@@ -8,16 +8,37 @@ import { Noticia } from 'src/app/interfaces/noticia.interface';
 })
 export class BlogComponent {
   arrayNoticias: Noticia[] = [];
+  newNoticia: Noticia = { titulo: '', urlImagen: '', cuerpoNoticia: '', fechaPublicacion: '' };
 
-  constructor(){
+  constructor() {
     this.arrayNoticias = [
-      { titulo: 'noticia 1', urlImagen: '', cuerpoNoticia: 'cuerpo de la noticia 1', fechaPublicacion: '31/12/2022'},
-      { titulo: 'noticia 2', urlImagen: '', cuerpoNoticia: 'cuerpo de la noticia 2', fechaPublicacion: '05/06/2023'}
+      { titulo: 'noticia 1', urlImagen: './assets/images/imagen_1.jpg', cuerpoNoticia: 'cuerpo de la noticia 1', fechaPublicacion: '2022-06-25' },
+      { titulo: 'noticia 2', urlImagen: './assets/images/imagen_2.jpg', cuerpoNoticia: 'cuerpo de la noticia 2', fechaPublicacion: '2023-07-01' }
     ]
   }
 
-  cargarNoticias(): string{
-    return `<li>${this.arrayNoticias[0].titulo}</li>`
+  cargarNoticias(): string {
+
+    let lista = "";
+
+    this.arrayNoticias.forEach(noticia => {
+      lista += `<li>${noticia.titulo}- ${noticia.urlImagen} - ${noticia.cuerpoNoticia} - ${noticia.fechaPublicacion}</li>`
+    })
+
+    return lista;
+
+  }
+
+  guardarNoticia(): void {
+    if (this.newNoticia.titulo === "" || this.newNoticia.urlImagen === "" || this.newNoticia.cuerpoNoticia === "" || this.newNoticia.fechaPublicacion === "") {
+      alert('No se permiten campos vacios')
+    } else {
+      this.arrayNoticias.push(this.newNoticia);
+      this.newNoticia = { titulo: '', urlImagen: '', cuerpoNoticia: '', fechaPublicacion: '' };
+
+    }
+
+
 
   }
 }
