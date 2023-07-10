@@ -6,7 +6,7 @@
         <input type="text" id="titulo" placeholder="Ingrese el titulo de la noticia" [(ngModel)]="newNoticia.titulo">
     </div>
     <div>
-        <label for="url">Url Noticia:</label>
+        <label for="url">Imagen (Url):</label>
         <input type="text" id="url" alt="Imagen" placeholder="Ingrese la url de la noticia" [(ngModel)]="newNoticia.urlImagen">
     </div>
     <div>
@@ -20,10 +20,10 @@
     <button (click)="guardarNoticia()">Publicar Noticia</button>
 
 </section>
-<section id="listaNoticias">
-    <h2>Lista de Noticias</h2>
+<section id="listaNoticias" [innerHTML]="cargarNoticias()">
+    <!--<h2>Lista de Noticias</h2>
     <ul [innerHTML]="cargarNoticias()">
 
-    </ul>
+    </ul>-->    
 
 </section>

@@ -12,8 +12,18 @@ export class BlogComponent {
 
   constructor() {
     this.arrayNoticias = [
-      { titulo: 'noticia 1', urlImagen: './assets/images/imagen_1.jpg', cuerpoNoticia: 'cuerpo de la noticia 1', fechaPublicacion: '2022-06-25' },
-      { titulo: 'noticia 2', urlImagen: './assets/images/imagen_2.jpg', cuerpoNoticia: 'cuerpo de la noticia 2', fechaPublicacion: '2023-07-01' }
+      {
+        titulo: 'Piláres de la Industria 4.0',
+        urlImagen: 'https://www.edsrobotics.com/wp-content/uploads/2020/05/industria-4.0-900x480.jpg',
+        cuerpoNoticia: 'Los pilares de la industria 4.0 son los factores que nos permiten evaluar si una organización productiva opera bajo los conceptos de la cuarta revolución industrial.',
+        fechaPublicacion: '2020-08-14'
+      },
+      {
+        titulo: '¿Qué es la industria 4.0?',
+        urlImagen: 'https://www.atriainnovation.com/wp-content/uploads/2019/10/portada-industria-4.jpg',
+        cuerpoNoticia: 'Cuando se habla de Revolución Industrial, nos referimos a cambios drásticos o revolucionarios en los entornos productivos',
+        fechaPublicacion: '2023-07-01'
+      }
     ]
   }
 
@@ -22,7 +32,13 @@ export class BlogComponent {
     let lista = "";
 
     this.arrayNoticias.forEach(noticia => {
-      lista += `<li>${noticia.titulo}- ${noticia.urlImagen} - ${noticia.cuerpoNoticia} - ${noticia.fechaPublicacion}</li>`
+      //lista += `<li>${noticia.titulo}- ${noticia.urlImagen} - ${noticia.cuerpoNoticia} - ${noticia.fechaPublicacion}</li>`
+      lista += `<article class="noticia">
+                  <img src="${noticia.urlImagen}" alt="${noticia.titulo}">
+                    <h3>${noticia.titulo}</h3>
+                    <p>${noticia.cuerpoNoticia}</p>
+                    <p>${noticia.fechaPublicacion}</p>
+                </article>`
     })
 
     return lista;

@@ -1,0 +1,11 @@
+.noticia{
+    border: 1px solid black;
+    margin: 10px;
+    width: 50%;
+}
+
+.noticia img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
