@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.noticia{
+    background-color: rgb(157, 240, 243);
+    border: 1px solid black;
+    margin: 10px;
+  
+}
+
+.noticia img{
+    width: 100%;
+    height: auto;
+    display: block;
+}

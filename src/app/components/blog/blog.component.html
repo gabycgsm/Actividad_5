@@ -1,29 +1,33 @@
-<section id="formulario">
-    <h1>Formulario</h1>
-    <hr>
-    <div>
-        <label for="titulo">Titulo:</label>
-        <input type="text" id="titulo" placeholder="Ingrese el titulo de la noticia" [(ngModel)]="newNoticia.titulo">
-    </div>
-    <div>
-        <label for="url">Imagen (Url):</label>
-        <input type="text" id="url" alt="Imagen" placeholder="Ingrese la url de la noticia" [(ngModel)]="newNoticia.urlImagen">
-    </div>
-    <div>
-        <label for="cuerpo">Cuerpo de la noticia:</label>
-        <input type="text" id="cuerpo" placeholder="Ingrese el cuerpo de la noticia" [(ngModel)]="newNoticia.cuerpoNoticia">
-    </div>
-    <div>
-        <label for="fecha">Fecha de la publicación:</label>
-        <input type="date" id="fecha" placeholder="Ingrese la fecha de publicación" [(ngModel)]="newNoticia.fechaPublicacion">
-    </div>
-    <button (click)="guardarNoticia()">Publicar Noticia</button>
+<div class="div-noticia">
+    <section id="formulario">
+        <h1>Formulario</h1>
+        <hr>
+        <div>
+            <label for="titulo">Titulo:</label>
+            <input type="text" id="titulo" placeholder="Ingrese el titulo de la noticia" [(ngModel)]="newNoticia.titulo">
+        </div>
+        <div>
+            <label for="url">Imagen (Url):</label>
+            <input type="text" id="url" alt="Imagen" placeholder="Ingrese la url de la noticia" [(ngModel)]="newNoticia.urlImagen">
+        </div>
+        <div>
+            <label for="cuerpo">Cuerpo de la noticia:</label>
+            <input type="text" id="cuerpo" placeholder="Ingrese el cuerpo de la noticia" [(ngModel)]="newNoticia.cuerpoNoticia">
+        </div>
+        <div>
+            <label for="fecha">Fecha de la publicación:</label>
+            <input type="date" id="fecha" placeholder="Ingrese la fecha de publicación" [(ngModel)]="newNoticia.fechaPublicacion">
+        </div>
+        <button (click)="guardarNoticia()">Publicar Noticia</button>
+    
+    </section>
+    <section id="listaNoticias" [innerHTML]="cargarNoticias()" >
+        <!--<h2>Lista de Noticias</h2>
+        <ul [innerHTML]="cargarNoticias()">
+    
+        </ul>-->    
+    
+    </section>
 
-</section>
-<section id="listaNoticias" [innerHTML]="cargarNoticias()">
-    <!--<h2>Lista de Noticias</h2>
-    <ul [innerHTML]="cargarNoticias()">
+</div>
 
-    </ul>-->    
-
-</section>
